@@ -9,10 +9,10 @@ import { SiTensorflow, SiApachekafka } from "react-icons/si";
 import { FaRobot } from "react-icons/fa";
 
 // Import SVG images directly
-import dlPipelineImg from "../../Assets/dl-pipeline.svg";
-import spotifyAnalysisImg from "../../Assets/spotify-analysis.svg";
-import ragAssistantImg from "../../Assets/rag-assistant.svg";
-import newsRecommenderImg from "../../Assets/news-recommender.svg";
+import dlPipelineImg from "../../Assets/dl-pipeline.png";
+import spotifyAnalysisImg from "../../Assets/spotify-analysis.png";
+import ragAssistantImg from "../../Assets/rag-assistant.png";
+import newsRecommenderImg from "../../Assets/news-recommender.png";
 
 function Projects() {
   return (
@@ -20,9 +20,9 @@ function Projects() {
       <Particle />
       <Container>
         <h1 className="bounty-name">
-          <span className="first-bracket">{"{"}</span>
+          
           Projects
-          <span className="last-bracket">{"}"}</span>
+          
         </h1>
         <p className="project-description normal-font">
           Here are a few treasures I've discovered on my data journey. Each project represents 
@@ -38,7 +38,7 @@ function Projects() {
               description="Built a deep learning model in TensorFlow achieving ~98% accuracy with automated version control using MLflow and DVC. Deployed via Docker-based CI/CD to AWS EC2, reducing deployment time to 6m 38s with robust, production-ready MLOps."
               techStack="TensorFlow | Keras | CNN | MLOps | CI/CD | Git | Flask | PyTorch"
               demoLink="#"
-              ghLink="#"
+              ghLink="https://github.com/sagaric24/Kidney-Disease-Classification-MLflow-DVC.git"
             />
           </Col>
 
@@ -64,7 +64,7 @@ function Projects() {
               description="Engineered a GenAI-based retrieval system using RAG and FAISS across 1,000+ datasets, increasing retrieval accuracy by 50%. Developed a scalable FastAPI backend, reducing API latency to under 200ms, supporting production-ready GenAI workflows."
               techStack="LLM | Langchain | FAISS | RAG | OpenAPI | Hugging Face | Prompt Engineering"
               demoLink="#"
-              ghLink="#"
+              ghLink="https://github.com/sagaric24/REIA-langchain-RAG-chatbot.git"
             />
           </Col>
 
@@ -77,7 +77,7 @@ function Projects() {
               description="Developed a real-time recommendation engine using Kafka for ingestion and Spark Streaming for dynamic content filtering. Designed Docker pipelines for sentiment analysis and user profiling, orchestrated with Airflow."
               techStack="Apache Kafka | Spark | MongoDB | Redis | Apache Airflow | PostgreSQL"
               demoLink="#"
-              ghLink="#"
+              ghLink="https://github.com/sagaric24/FeedFlick-AdaptiveContentEngine.git"
             />
           </Col>
         </Row>

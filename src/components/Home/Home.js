@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle";
 import Type from "./Type";
-import { FaTwitter, FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import myImg from "../../Assets/avatar.png"; // Make sure you have your profile image here
 
@@ -23,23 +23,20 @@ function Home() {
                 </div>
                 
                 <h1 className="profile-name">Sagari Chandrashekar</h1>
-                {/* <p className="profile-title">Data Analyst & Data Scientist</p> */}
                 
                 <div className="typewriter-container">
                   <Type />
                 </div>
                 
-                <div className="profile-social">
-                  <a href="https://github.com/your-username" className="social-icon" target="_blank" rel="noreferrer">
+                {/* Moved social icons here and centered them */}
+                <div className="profile-social-centered">
+                  <a href="https://github.com/sagaric24" className="social-icon" target="_blank" rel="noreferrer">
                     <FaGithub />
                   </a>
-                  <a href="https://twitter.com/your-handle" className="social-icon" target="_blank" rel="noreferrer">
-                    <FaTwitter />
-                  </a>
-                  <a href="https://www.linkedin.com/in/your-profile" className="social-icon" target="_blank" rel="noreferrer">
+                  <a href="https://www.linkedin.com/in/sagaric/" className="social-icon" target="_blank" rel="noreferrer">
                     <FaLinkedinIn />
                   </a>
-                  <a href="mailto:your-email@example.com" className="social-icon">
+                  <a href="mailto:sagaric24@gmail.com" className="social-icon">
                     <HiOutlineMail />
                   </a>
                 </div>
@@ -49,17 +46,12 @@ function Home() {
             {/* Right side - Information */}
             <Col md={7} className="home-header">
               <h1 className="bounty-name">
-               
-              Full-Stack Data Burrito 🌯
-
-                
+                Full-Stack Data Burrito 🌯
               </h1>
-              
-          
               
               <p className="home-description">
                 I'm a data analyst, scientist, and engineer rolled into one — basically a data burrito.
-I clean up messy datasets, build pipelines that don’t cry in production, and whip up dashboards, ML models, and GenAI tools that hopefully impress stakeholders and make teams go, “Oh wow, that’s actually useful.”
+I clean up messy datasets, build pipelines that don't cry in production, and whip up dashboards, ML models, and GenAI tools that hopefully impress stakeholders and make teams go, "Oh wow, that's actually useful."
               </p>
 
               <div className="home-stats">
@@ -67,7 +59,6 @@ I clean up messy datasets, build pipelines that don’t cry in production, and w
                   <h2 className="stat-number">3+</h2>
                   <p className="stat-label">YEARS OF<br />EXPERIENCE</p>
                 </div>
-            
               </div>
 
               <div className="home-buttons">

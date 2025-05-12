@@ -4,7 +4,8 @@ import Typewriter from "typewriter-effect";
 function Type() {
   return (
     <div className="type-wrapper">
-      <span className="type-constant">Data</span>
+      {/* Add space directly to the "Data" text */}
+      <span className="type-constant">Data&nbsp;&nbsp;</span>
       <span className="type-changing">
         <Typewriter
           options={{

@@ -73,6 +73,16 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
+             <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/experience"
+                onClick={() => updateExpanded(false)}
+              >
+                <FaMapMarkedAlt style={{ marginBottom: "2px" }} /> Journey Map
+              </Nav.Link>
+            </Nav.Item>
+
             <Nav.Item>
               <Nav.Link
                 as={Link}
@@ -93,15 +103,6 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/experience"
-                onClick={() => updateExpanded(false)}
-              >
-                <FaMapMarkedAlt style={{ marginBottom: "2px" }} /> Journey Map
-              </Nav.Link>
-            </Nav.Item>
           </Nav>
         </Navbar.Collapse>
       </Container>

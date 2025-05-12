@@ -3,7 +3,6 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 // Import specific icons instead of from 'all'
-import { BiLinkExternal } from "react-icons/bi";
 import { FaGithub } from "react-icons/fa";
 
 function ProjectCards(props) {
@@ -27,7 +26,7 @@ function ProjectCards(props) {
         <Card.Title className="project-title">{props.title}</Card.Title>
         <Card.Subtitle className="project-subtitle">{props.subtitle}</Card.Subtitle>
         
-        <div className="tech-stack-container">
+        <div className="tech-stack-box">
           <div className="tech-stack-label">Tech Stack:</div>
           <div className="tech-stack-items normal-font">{props.techStack}</div>
         </div>
@@ -42,19 +41,9 @@ function ProjectCards(props) {
               variant="primary"
               href={props.ghLink}
               target="_blank"
-              className="project-button"
+              className="github-button"
             >
               <FaGithub /> &nbsp;GitHub
-            </Button>
-          )}
-          {props.demoLink && (
-            <Button
-              variant="primary"
-              href={props.demoLink}
-              target="_blank"
-              className="project-button"
-            >
-              <BiLinkExternal /> &nbsp;Demo
             </Button>
           )}
         </div>

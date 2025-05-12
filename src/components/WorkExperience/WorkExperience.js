@@ -12,6 +12,7 @@ import stonyBrookLogo from "../../Assets/stonybrook-logo.png";
 import amazonLogo from "../../Assets/amazon-logo.png";
 import divHacksLogo from "../../Assets/divhacks-logo.png";
 import lecturerLogo from "../../Assets/lecturer-logo.png";
+import mapBackgroundImage from "../../Assets/map-background.png";
 
 function WorkExperience() {
   return (
@@ -19,9 +20,7 @@ function WorkExperience() {
       <Particle />
       <Container>
         <h1 className="bounty-name">
-          <span className="first-bracket">{"{"}</span>
-          Journey Map
-          <span className="last-bracket">{"}"}</span>
+          Journey Map 📜
         </h1>
         <p className="experience-description normal-font">
           Chart of my professional voyage through the high seas of data science, tracking the treasures
@@ -29,17 +28,19 @@ function WorkExperience() {
         </p>
 
         <div className="treasure-map-container">
-          {/* Treasure Map Background */}
-          <div className="treasure-map">
+          {/* Treasure Map Background - Apply background image directly to this element */}
+          <div 
+            className="treasure-map"
+            style={{
+              backgroundImage: `url(${mapBackgroundImage}), url("https://www.transparenttextures.com/patterns/old-paper.png")`
+            }}
+          >
             {/* Scroll Indicator (at top) */}
             <div className="scroll-indicator">
               <span>Unlocking...</span>
               <FaArrowUp className="scroll-arrow" />
             </div>
             
-            {/* Treasure Chest at top */}
-            
-
             {/* S-Shaped Map Path */}
             <div className="map-path"></div>
             
