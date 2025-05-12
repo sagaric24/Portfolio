@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="450px" viewBox="0 0 800 450" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Spotify Data Analysis</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="gradient">
+            <stop stop-color="#4A3520" stop-opacity="0.9" offset="0%"></stop>
+            <stop stop-color="#6d4c30" stop-opacity="0.85" offset="100%"></stop>
+        </linearGradient>
+        <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+            <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.3"/>
+        </filter>
+    </defs>
+    <rect width="800" height="450" fill="url(#gradient)"/>
+    
+    <!-- Background pattern -->
+    <g opacity="0.3">
+        <circle cx="100" cy="100" r="15" fill="#e8d9b5"/>
+        <circle cx="200" cy="150" r="15" fill="#e8d9b5"/>
+        <circle cx="300" cy="100" r="15" fill="#e8d9b5"/>
+        <circle cx="400" cy="80" r="15" fill="#e8d9b5"/>
+        <circle cx="500" cy="120" r="15" fill="#e8d9b5"/>
+        <circle cx="600" cy="90" r="15" fill="#e8d9b5"/>
+        <circle cx="700" cy="130" r="15" fill="#e8d9b5"/>
+        <circle cx="150" cy="200" r="15" fill="#e8d9b5"/>
+        <circle cx="250" cy="250" r="15" fill="#e8d9b5"/>
+        <circle cx="350" cy="230" r="15" fill="#e8d9b5"/>
+        <circle cx="450" cy="270" r="15" fill="#e8d9b5"/>
+        <circle cx="550" cy="240" r="15" fill="#e8d9b5"/>
+        <circle cx="650" cy="280" r="15" fill="#e8d9b5"/>
+        <circle cx="100" cy="350" r="15" fill="#e8d9b5"/>
+        <circle cx="200" cy="320" r="15" fill="#e8d9b5"/>
+        <circle cx="300" cy="370" r="15" fill="#e8d9b5"/>
+        <circle cx="400" cy="340" r="15" fill="#e8d9b5"/>
+        <circle cx="500" cy="380" r="15" fill="#e8d9b5"/>
+        <circle cx="600" cy="330" r="15" fill="#e8d9b5"/>
+        <circle cx="700" cy="360" r="15" fill="#e8d9b5"/>
+    </g>
+    
+    <g transform="translate(170, 110)" filter="url(#shadow)">
+        <path d="M30,0 L430,0 C445.464,0 458,12.536 458,28 L458,202 C458,217.464 445.464,230 430,230 L30,230 C14.536,230 2,217.464 2,202 L2,28 C2,12.536 14.536,0 30,0 Z" fill="#e8d9b5" opacity="0.9"/>
+    </g>
+    <text x="400" y="180" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#4A3520">Statistical Analysis of</text>
+    <text x="400" y="225" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#4A3520">Spotify Streaming Data</text>
+    
+    <!-- Statistical visualization elements -->
+    <g transform="translate(250, 250)">
+        <!-- Bar chart -->
+        <rect x="0" y="60" width="30" height="100" fill="#4A3520"/>
+        <rect x="40" y="40" width="30" height="120" fill="#4A3520"/>
+        <rect x="80" y="80" width="30" height="80" fill="#4A3520"/>
+        <rect x="120" y="20" width="30" height="140" fill="#4A3520"/>
+        <rect x="160" y="50" width="30" height="110" fill="#4A3520"/>
+        
+        <!-- Axis -->
+        <line x1="0" y1="180" x2="190" y2="180" stroke="#4A3520" stroke-width="2"/>
+        <line x1="0" y1="180" x2="0" y2="0" stroke="#4A3520" stroke-width="2"/>
+        
+        <!-- Scatter points -->
+        <circle cx="220" cy="40" r="5" fill="#4A3520"/>
+        <circle cx="240" cy="80" r="5" fill="#4A3520"/>
+        <circle cx="260" cy="30" r="5" fill="#4A3520"/>
+        <circle cx="280" cy="100" r="5" fill="#4A3520"/>
+        <circle cx="300" cy="60" r="5" fill="#4A3520"/>
+        
+        <!-- Line connecting points -->
+        <path d="M220,40 L240,80 L260,30 L280,100 L300,60" stroke="#4A3520" stroke-width="2" fill="none"/>
+    </g>
+</svg>

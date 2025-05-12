@@ -3,19 +3,20 @@ import Typewriter from "typewriter-effect";
 
 function Type() {
   return (
-    <Typewriter
-      options={{
-        strings: [
-          "Software Developer",
-          "Freelancer",
-          "MERN Stack Developer",
-          "Open Source Contributor",
-        ],
-        autoStart: true,
-        loop: true,
-        deleteSpeed: 50,
-      }}
-    />
+    <div className="type-wrapper">
+      <span className="type-constant">Data </span>
+      <span className="type-changing">
+        <Typewriter
+          options={{
+            strings: ["Analyst", "  Scientist", "  Engineer"],
+            autoStart: true,
+            loop: true,
+            deleteSpeed: 50,
+            delay: 80,
+          }}
+        />
+      </span>
+    </div>
   );
 }
 

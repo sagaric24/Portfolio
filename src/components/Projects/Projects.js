@@ -2,89 +2,82 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/leaf.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import editor from "../../Assets/Projects/codeEditor.png";
-import chatify from "../../Assets/Projects/chatify.png";
-import suicide from "../../Assets/Projects/suicide.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
+
+// Correctly import only the icons we need from specific packages
+import { DiPython } from "react-icons/di";
+import { SiTensorflow, SiApachekafka } from "react-icons/si";
+import { FaRobot } from "react-icons/fa";
+
+// Import SVG images directly
+import dlPipelineImg from "../../Assets/dl-pipeline.svg";
+import spotifyAnalysisImg from "../../Assets/spotify-analysis.svg";
+import ragAssistantImg from "../../Assets/rag-assistant.svg";
+import newsRecommenderImg from "../../Assets/news-recommender.svg";
 
 function Projects() {
   return (
-    <Container fluid className="project-section">
+    <Container fluid className="project-section wanted-poster">
       <Particle />
       <Container>
-        <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+        <h1 className="bounty-name">
+          <span className="first-bracket">{"{"}</span>
+          Projects
+          <span className="last-bracket">{"}"}</span>
         </h1>
-        <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
+        <p className="project-description normal-font">
+          Here are a few treasures I've discovered on my data journey. Each project represents 
+          a unique challenge conquered through code, creativity, and the occasional all-nighter.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
+          <Col md={6} className="project-card-col">
             <ProjectCard
-              imgPath={chatify}
-              isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/soumyajit4419/Chatify"
-              demoLink="https://chatify-49.web.app/"
+              imgPath={dlPipelineImg}
+              icon={<SiTensorflow className="project-icon" />}
+              title="End-to-End Deep Learning Pipeline"
+              subtitle="Disease Classification"
+              description="Built a deep learning model in TensorFlow achieving ~98% accuracy with automated version control using MLflow and DVC. Deployed via Docker-based CI/CD to AWS EC2, reducing deployment time to 6m 38s with robust, production-ready MLOps."
+              techStack="TensorFlow | Keras | CNN | MLOps | CI/CD | Git | Flask | PyTorch"
+              demoLink="#"
+              ghLink="#"
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col md={6} className="project-card-col">
             <ProjectCard
-              imgPath={bitsOfCode}
-              isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
-              demoLink="https://blogs.soumya-jit.tech/"
+              imgPath={spotifyAnalysisImg}
+              icon={<DiPython className="project-icon" />}
+              title="Statistical Analysis of Spotify Streaming Data"
+              subtitle="Music Data Analytics"
+              description="Performed data wrangling and statistical testing to reduce inconsistencies by 30%, using Chi-square, and Shapiro-Wilk tests. Applied regression models to handle MNAR data, achieving R² of 0.95 to uncover key predictors of stream performance."
+              techStack="R | SQL | t-test | Chi-square | Regression | Hypothesis Testing | Statistics"
+              demoLink="#"
+              ghLink="#"
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col md={6} className="project-card-col">
             <ProjectCard
-              imgPath={editor}
-              isBlog={false}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoLink="https://editor.soumya-jit.tech/"              
+              imgPath={ragAssistantImg}
+              icon={<FaRobot className="project-icon" />}
+              title="RAG-Based Renewable Energy GenAI Assistant"
+              subtitle="Intelligent Query Engine"
+              description="Engineered a GenAI-based retrieval system using RAG and FAISS across 1,000+ datasets, increasing retrieval accuracy by 50%. Developed a scalable FastAPI backend, reducing API latency to under 200ms, supporting production-ready GenAI workflows."
+              techStack="LLM | Langchain | FAISS | RAG | OpenAPI | Hugging Face | Prompt Engineering"
+              demoLink="#"
+              ghLink="#"
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col md={6} className="project-card-col">
             <ProjectCard
-              imgPath={leaf}
-              isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/soumyajit4419/Plant_AI"
-              demoLink="https://plant49-ai.herokuapp.com/"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={suicide}
-              isBlog={false}
-              title="Ai For Social Good"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-              ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
-              // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={emotion}
-              isBlog={false}
-              title="Face Recognition and Emotion Detection"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
-              Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
-              // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
+              imgPath={newsRecommenderImg}
+              icon={<SiApachekafka className="project-icon" />}
+              title="Real-Time Big Data News Recommender System"
+              subtitle="Real-Time Content Recommendations"
+              description="Developed a real-time recommendation engine using Kafka for ingestion and Spark Streaming for dynamic content filtering. Designed Docker pipelines for sentiment analysis and user profiling, orchestrated with Airflow."
+              techStack="Apache Kafka | Spark | MongoDB | Redis | Apache Airflow | PostgreSQL"
+              demoLink="#"
+              ghLink="#"
             />
           </Col>
         </Row>

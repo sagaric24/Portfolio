@@ -1,743 +1,1071 @@
-html {
-  --section-background-color: linear-gradient(
-    to bottom left,
-    rgba(17, 16, 16, 0.582),
-    rgba(12, 8, 24, 0.904)
-  );
+/* Add these styles to your src/style.css file to apply the One Piece theme to all pages */
 
-  --image-gradient: linear-gradient(
-    to bottom left,
-    rgba(17, 16, 16, 0.678),
-    rgba(12, 10, 22, 0.863)
-  );
+/* Import Wanted Poster Font */
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Pirata+One&display=swap');
 
-  --imp-text-color: #c770f0;
+/* Global Theme - Apply to All Pages */
+body {
+  background-color: #e8d9b5 !important; /* Parchment color */
+  background-image: url("https://www.transparenttextures.com/patterns/old-paper.png") !important;
+  color: #4a3520 !important; /* Dark brown text color */
+  font-family: 'IM Fell English SC', serif !important;
 }
 
-.purple {
-  color: var(--imp-text-color) !important;
+/* Remove any existing background colors/images from sections */
+.home-section,
+.about-section,
+.project-section,
+.resume-section,
+.blog-section {
+  background-color: transparent !important;
+  background-image: none !important;
+  color: #4a3520 !important;
 }
 
-button:focus {
-  box-shadow: none !important;
+/* Remove stars/particles background */
+.no-particles {
+  display: none !important;
 }
 
-/* --------- */
-/*  Preloader */
-/* --------- */
-#preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999999;
-  background-color: #0c0513;
-  background-image: url(./Assets/pre.svg);
-  background-repeat: no-repeat;
-  background-position: center;
+#tsparticles {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
-#preloader-none {
-  opacity: 0;
+.tsparticles-canvas-el {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
-#no-scroll {
-  overflow: hidden;
-  height: 100vh;
+/* Fix the dark block at the bottom */
+.footer {
+  background-color: transparent !important;
+  border-top: 1px solid rgba(74, 53, 32, 0.2) !important;
+  padding-top: 20px !important;
+  color: #4a3520 !important;
 }
 
-/* --------- */
-/*Scrollbar   */
-/* --------- */
+.footer p {
+  color: #4a3520 !important;
+}
 
+/* Footer area with stars/dark background */
+.footer-dark,
+.dark-background,
+.dark-section {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Apply One Piece theme to all headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #4a3520 !important;
+  font-family: 'Pirata One', cursive !important;
+}
+
+/* Apply One Piece theme to all text */
+p, span, div, li, a {
+  color: #4a3520 !important;
+}
+
+/* Special styling for card components */
+.card,
+.about-card,
+.project-card-view,
+.tech-icons,
+.resume-item,
+.quote-card-view {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  border: 1px solid #4a3520 !important;
+  color: #4a3520 !important;
+  box-shadow: 0 4px 8px rgba(74, 53, 32, 0.15) !important;
+}
+
+/* Button styling consistent with One Piece theme */
+.btn-primary, 
+.primary-button, 
+.talk-btn {
+  display: inline-block;
+  background-color: #4a3520;
+  color: #e8d9b5 !important;
+  padding: 10px 25px;
+  border-radius: 4px;
+  font-family: 'IM Fell English SC', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid #3c2f2f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover, 
+.primary-button:hover, 
+.talk-btn:hover {
+  background-color: #5c4738;
+  transform: translateY(-2px);
+  color: #e8d9b5 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Add One Piece scroll bar styling */
 ::-webkit-scrollbar {
   width: 7px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
-  background: #2d1950;
+  background: #e8d9b5;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(178, 121, 216, 0.959);
-  border-radius: 12px;
+  background: rgba(74, 53, 32, 0.6);
+  border-radius: 10px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(222, 130, 235, 0.911);
-  border-radius: 12px;
+  background: rgba(74, 53, 32, 0.8);
 }
 
-/* --------- */
-/* Navbar Section  */
-/* --------- */
-.sticky {
-  background-color: #1b1a2ea9 !important;
-  transition: all 0.3s ease-out 0s !important;
-  box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
-  backdrop-filter: blur(15px) !important;
+/* About Page Specific Styles */
+.about-section .tech-icons {
+  border: 1.7px solid rgba(74, 53, 32, 0.637) !important;
+  box-shadow: 4px 5px 4px 3px rgba(74, 53, 32, 0.137) !important;
 }
 
-.navbar {
-  position: fixed !important;
-  transition: all 0.3s ease-out 0s !important;
-  padding: 0.3rem 2rem !important;
-  font-size: 1.2rem !important;
+.about-section .tech-icons:hover {
+  border: 2.2px solid rgba(74, 53, 32, 0.883) !important;
 }
 
-.navbar-toggler {
-  position: relative !important;
-  background-color: transparent !important;
-  border-color: transparent !important;
-}
-
-.navbar-toggler span {
-  display: block !important;
-  background-color: #be50f4 !important;
-  height: 4px !important;
-  width: 27px !important;
-  margin-top: 5px !important;
-  margin-bottom: 5px !important;
-  transform: rotate(0deg) !important;
-  left: 0 !important;
-  opacity: 1 !important;
-}
-
-.navbar-toggler:focus,
-.navbar-toggler:active {
-  outline: 0 !important;
-}
-
-.navbar-toggler span:nth-child(1),
-.navbar-toggler span:nth-child(3) {
-  transition: transform 0.35s ease-in-out !important;
-  transition: transform 0.35s ease-in-out !important;
-}
-
-.navbar-toggler:not(.collapsed) span:nth-child(1) {
-  position: absolute !important;
-  left: 12px !important;
-  top: 10px !important;
-  transform: rotate(135deg) !important;
-  opacity: 0.9 !important;
-}
-
-.navbar-toggler:not(.collapsed) span:nth-child(2) {
-  height: 12px !important;
-  visibility: hidden !important;
-  background-color: transparent !important;
-}
-
-.navbar-toggler:not(.collapsed) span:nth-child(3) {
-  position: absolute !important;
-  left: 12px !important;
-  top: 10px !important;
-  transform: rotate(-135deg) !important;
-  opacity: 0.9 !important;
-}
-
-@media (max-width: 767px) {
-  .navbar {
-    padding: 1rem 2rem !important;
-    font-size: 1.4rem !important;
-    background-color: #181a27 !important;
-  }
-  .navbar-nav .nav-item a::after {
-    display: none !important;
-  }
-}
-.navbar-brand {
-  color: rgb(250, 250, 250) !important;
-}
-
-.logo {
-  height: 1.4em !important;
-  width: 2.5em !important;
-}
-
-.navbar-nav .nav-link {
-  color: white !important;
-  padding-right: 1rem !important;
-  padding-left: 1rem !important;
-}
-
-.nav-link {
-  padding: 0.8rem 1rem !important;
-}
-
-@media (max-width: 767px) {
-  .nav-link {
-    padding: 0.7rem 1rem !important;
-  }
-}
-
-.navbar-nav .nav-item {
-  position: relative;
-  margin-left: 20px;
-}
-
-.navbar-nav .nav-item a {
-  font-weight: 400;
-  transition: all 0.3s ease-out 0s;
-  position: relative;
-  z-index: 1;
-}
-
-.navbar-nav .nav-item a::after {
-  content: "";
-  position: relative;
-  display: block;
-  height: 5px;
-  width: 0;
-  border-radius: 16px;
-  background: #c95bf5;
-  bottom: 1px;
-  left: 0;
-  z-index: -1;
-  transition: all 0.3s ease-out 0s;
-}
-
-.navbar-nav .nav-item a:hover::after {
-  width: 100%;
-}
-
-/* --------- */
-/* Home section */
-/* --------- */
-.wave {
-  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
-  animation-duration: 2.1s; /* Change to speed up or slow down */
-  animation-iteration-count: infinite; /* Never stop waving :) */
-  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
-  display: inline-block;
-}
-
-@keyframes wave-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(14deg);
-  } /* The following five values can be played with to make the waving more or less extreme */
-  20% {
-    transform: rotate(-8deg);
-  }
-  30% {
-    transform: rotate(14deg);
-  }
-  40% {
-    transform: rotate(-4deg);
-  }
-  50% {
-    transform: rotate(10deg);
-  }
-  60% {
-    transform: rotate(0deg);
-  } /* Reset for the last half to pause */
-  100% {
-    transform: rotate(0deg);
-  }
-}
-#tsparticles {
-  position: fixed !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  width: 100%;
-  height: 100%;
-}
-
-.home-header {
-  padding-top: 80px !important;
-}
-
-.home-section {
-  position: relative;
-  z-index: -1;
-  background-image: var(--image-gradient), url(./Assets/home-bg.jpg);
-  background-position: top center;
-  background-repeat: no-repeat;
-  padding-bottom: 30px !important;
-  padding-top: 30px !important;
-}
-
-.home-content {
-  padding: 9rem 0 2rem !important;
-  color: whitesmoke;
-  text-align: left;
-}
-
-.heading {
-  font-size: 2.4em !important;
-  padding-left: 50px !important;
-}
-
-.heading-name {
-  font-size: 2.5em !important;
-  padding-left: 45px !important;
-}
-
-.main-name {
-  color: #cd5ff8;
-}
-
-.Typewriter__wrapper {
-  font-size: 2.2em !important;
-  color: #be6adf !important;
-  font-weight: 600 !important;
-}
-.Typewriter__cursor {
-  font-size: 2.4em !important;
-  color: #b562d6 !important;
-}
-
-@media (max-width: 767px) {
-  .Typewriter__wrapper {
-    font-size: 1.4em !important;
-    font-weight: 500 !important;
-    position: absolute !important;
-  }
-  .Typewriter__cursor {
-    display: none !important;
-  }
-}
-
-.myAvtar {
-  justify-content: center !important;
-  padding-top: 9em !important;
-}
-
-@media (max-width: 767px) {
-  .myAvtar {
-    padding-top: 2em !important;
-    padding-bottom: 2em !important;
-  }
-}
-
-.home-about-section {
-  position: relative;
-  padding-bottom: 70px !important;
-  padding-top: 70px !important;
-}
-
-.home-about-description {
-  color: white !important;
-  padding-top: 100px !important;
-  padding-bottom: 20px !important;
-  text-align: center;
-}
-
-.home-about-body {
-  padding-top: 50px;
-  font-size: 1.2em !important;
-  text-align: left;
-}
-
-.home-about-social {
-  text-align: center !important;
-  padding-top: 25px;
-  color: white !important;
-}
-
-.home-about-social-links {
-  justify-content: center !important;
-  padding-top: 15px !important;
-  display: inline-block !important;
-  position: relative !important;
-  padding-inline-start: 0 !important;
-}
-
-.home-social-icons {
-  position: relative !important;
-  display: inline-block !important;
-  width: 40px !important;
-  height: 40px !important;
-  text-align: center !important;
-  font-size: 1.2em !important;
-  line-height: 2em !important;
-  background: rgba(255, 255, 255, 0.972) !important;
-  border-radius: 50% !important;
-  transition: 0.5s !important;
-}
-
-.home-social-icons::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: #68187a;
-  transition: 0.5s;
-  transform: scale(0.9);
-  z-index: -1;
-}
-
-.home-social-icons:hover::before {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px #801f95;
-}
-
-.home-social-icons:hover {
-  color: #87209e;
-  box-shadow: 0 0 5px #87209e;
-  text-shadow: 0 0 2px #87209e;
-}
-
-.social-icons {
-  display: inline-block !important;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-.icon-colour {
-  color: #700c86 !important;
-}
-
-/* --------- */
-/* Footer */
-/* --------- */
-.footer {
-  background-color: rgb(10, 4, 22);
-  bottom: 0 !important;
-  padding-top: 10px !important;
-  padding-bottom: 8px !important ;
-}
-.footer-copywright {
-  text-align: center !important;
-}
-
-.footer-body {
-  z-index: 1;
-  text-align: center !important;
-}
-
-@media (max-width: 767px) {
-  .footer-copywright {
-    text-align: center !important;
-  }
-
-  .footer-body {
-    text-align: center !important;
-  }
-}
-
-.footer h3 {
-  font-size: 1em;
-  color: white !important;
-  margin-top: 0.5em !important;
-  margin-bottom: 0.5em !important;
-}
-.footer-icons {
-  margin-top: 0.5em !important;
-  margin-bottom: 0.5em !important;
-  padding: 0 !important;
-}
-
-.blockquote-footer {
-  color: #a588c0 !important;
-}
-/* --------- */
-/* Projects */
-/* --------- */
-.project-section {
-  position: relative !important;
-  padding-top: 150px !important;
-  padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
-}
-
-.project-card {
-  padding-top: 50px !important;
-  padding-bottom: 50px !important;
-  padding-left: 25px !important;
-  padding-right: 25px !important;
-  height: auto !important;
-}
-
+/* Project Page Specific Styles */
 .project-card-view {
-  box-shadow: 0 4px 5px 3px rgba(119, 53, 136, 0.459) !important;
-  color: white !important;
-  background-color: transparent !important;
-  opacity: 0.9 !important;
-  transition: all 0.5s ease 0s !important;
-  height: 100% !important;
+  box-shadow: 0 4px 5px 3px rgba(74, 53, 32, 0.359) !important;
 }
+
 .project-card-view:hover {
-  transform: scale(1.02) !important;
-  overflow: hidden !important;
-  box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561) !important;
+  box-shadow: 0 4px 4px 5px rgba(74, 53, 32, 0.361) !important;
 }
 
-.blog-card {
-  padding-top: 50px !important;
-  padding-bottom: 50px !important;
-  padding-left: 25px !important;
-  padding-right: 25px !important;
-  height: auto !important;
+/* Resume Page Specific Styles */
+.resume-section .resume-item {
+  border-left: 2px solid #4a3520 !important;
 }
 
-.blog-card-view {
+.resume-section .resume-item::before {
+  border: 2px solid #4a3520 !important;
+  background: #e8d9b5 !important;
+}
+
+.resume-section .resume-item .resume-title {
+  background-color: rgba(74, 53, 32, 0.2) !important;
+}
+
+/* Fix any dark overlays */
+.overlay,
+.background-overlay,
+.dark-overlay {
   background-color: transparent !important;
-  box-shadow: 0 3px 3px 2px rgba(145, 77, 161, 0.459) !important;
-  color: white !important;
-  transition: all 0.5s ease 0s !important;
-  height: 100% !important;
+  opacity: 0 !important;
 }
 
-.blog-link {
-  color: white !important;
-  text-decoration: none !important;
+/* Make sure we hide any stars or particles elements */
+.stars,
+.particles,
+.background-animation,
+canvas[data-engine="tsparticles"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
-.blog-link:hover {
-  cursor: pointer !important;
+/* Navbar styling */
+.navbar-light .navbar-brand,
+.navbar-light .navbar-nav .nav-link {
+  color: #4a3520 !important;
 }
 
-.blog-card-view:hover {
-  transform: scale(1.02) !important;
-  overflow: hidden !important;
-  box-shadow: 0 3px 3px 5px rgba(155, 88, 173, 0.65) !important;
+/* Add these styles to your src/style.css file */
+
+/* Add padding to top of the page to push content down */
+.home-section {
+  padding-top: 90px !important; /* Increase this value to push content further down */
+  min-height: 90vh; /* Ensure minimum height to keep content centered */
+  display: flex;
+  align-items: center;
 }
 
-.card-img-top {
-  padding: 20px !important;
-  opacity: 0.8 !important;
-  border-radius: 10px !important;
+/* Adjust the home content container */
+.home-content {
+  padding-top: 0 !important;
+  padding-bottom: 40px !important; /* Space above footer */
 }
 
-.blog-img {
-  padding: 0px !important;
-  opacity: 0.8 !important;
-  border-radius: 0px !important;
-}
-
-.btn-primary {
-  color: #fff !important;
-  background-color: #623686 !important;
-  border-color: #623686 !important;
-}
-
-.btn-primary:hover {
-  color: #fff !important;
-  background-color: #6d20c5d7 !important;
-  border-color: #6d20c5d7 !important;
-}
-.btn:focus {
-  outline: none !important;
-  box-shadow: none !important;
-}
-.project-heading {
-  color: white !important;
-  font-size: 2.3em !important;
-  font-weight: 500 !important;
-  padding-top: 10px !important;
-}
-
-/* --------- */
-/* About */
-/* --------- */
-
-.about-section {
-  position: relative !important;
-  padding-top: 150px !important;
-  padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
-  color: white !important;
-}
-
-.tech-icons {
-  font-size: 4.5em !important;
-  margin: 15px !important;
-  padding: 10px !important;
-  opacity: 0.93 !important;
-  border: 1.7px solid rgba(200, 137, 230, 0.637) !important;
-  vertical-align: middle !important;
-  text-align: center !important;
-  border-radius: 5px !important;
-  display: table !important;
-  box-shadow: 4px 5px 4px 3px rgba(89, 4, 168, 0.137) !important;
-  overflow: hidden !important;
-  transition: all 0.4s ease 0s !important;
-}
-
-@media (max-width: 767px) {
-  .tech-icons {
-    margin: 10px !important;
-  }
-}
-
-.tech-icons:hover {
-  transform: scale(1.05) !important;
-  overflow: hidden !important;
-  border: 2.2px solid rgba(197, 115, 230, 0.883) !important;
-}
-.tech-icon-images {
-  padding: 20px !important;
-  line-height: 1.6 !important;
-}
-
-.quote-card-view {
-  border: none !important;
-  color: white !important;
-  background-color: transparent !important;
-}
-
-.about-activity {
-  list-style: none !important;
-  text-align: left !important;
-  padding-left: 1px !important;
-}
-
-@media (max-width: 767px) {
-  .about-img {
-    padding-top: 0 !important;
-  }
-}
-/* --------- */
-/* Resume */
-/* --------- */
-
-.resume-section {
-  position: relative !important;
-  padding-top: 110px !important;
-  padding-bottom: 30px !important;
-  background-image: var(--section-background-color) !important;
-  color: white !important;
-}
-
-.resume {
-  padding-top: 50px;
-  padding-bottom: 50px;
+/* Center the profile card vertically */
+.profile-card-container {
+  display: flex;
   justify-content: center;
+  align-items: center;
+  margin-top: 0 !important;
 }
 
-.resume-left {
-  padding-right: 80px !important;
+/* Adjust the home row to be centered vertically */
+.home-row {
+  margin-top: 0 !important;
+  align-items: center;
 }
 
-.resume-right {
-  padding-left: 80px !important;
+/* Reduce the size of the footer */
+.footer {
+  padding-top: 2px !important;
+  padding-bottom: 0px !important;
+  font-size: 0.85rem !important;
 }
 
-@media (max-width: 767px) {
-  .resume-left {
-    padding-right: 15px !important;
-    padding-left: 15px !important;
-  }
-
-  .resume-right {
-    padding-right: 15px !important;
-    padding-left: 15px !important;
-  }
-}
-.resume .resume-title {
-  font-size: 2em;
-  font-weight: 700;
-  padding-top: 30px;
-  padding-bottom: 30px;
+.footer p {
+  margin-bottom: 0px !important;
+  font-size: 0.85rem !important;
 }
 
-.resume .resume-item {
-  padding: 0 0 10px 25px;
-  margin-top: -2px;
-  border-left: 2px solid #8a49a8;
-  position: relative;
+/* Make the footer container take up less space */
+.footer .container-fluid {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
 }
 
-.resume .resume-item .resume-title {
-  line-height: 18px;
-  font-size: 0.9em;
-  background: #5234795d;
-  padding: 8px 15px;
-  display: inline-block;
-  font-weight: 600;
+/* Fix the bounty amount positioning */
+.bounty-amount {
+  margin-bottom: 20px !important;
+}
+
+/* Make sure the home buttons stay at the bottom of their container */
+.home-buttons {
+  margin-top: 30px;
+}
+
+/* Adjust the stats section */
+.home-stats {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+/* Add a bit more spacing to the typewriter area */
+.typewriter-container {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Make the profile image and text more compact if needed */
+.profile-image-container {
   margin-bottom: 10px;
 }
 
-.resume .resume-item ul {
-  padding-left: 20px;
-  text-align: justify;
+.profile-name {
+  margin-top: 10px;
+  margin-bottom: 0;
 }
 
-.resume .resume-item ul li {
-  padding-bottom: 10px;
-  list-style: none;
+.profile-title {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
-.resume .resume-item:last-child {
-  padding-bottom: 0;
+/* For responsive adjustments */
+
+@media (max-width: 767px) {
+  .home-section {
+    padding-top: 80px !important;
+  }
+  
+  .home-content {
+    padding-bottom: 0px !important;
+  }
 }
 
-.resume .resume-item::before {
-  content: "";
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border-radius: 50px;
-  left: -9px;
-  top: 0;
-  background: #fff;
-  border: 2px solid #8a49a8;
+/* Add these styles to your src/style.css file to increase overall font size */
+
+/* Increase base font size for the entire site */
+body {
+  font-size: 18px !important; /* Increase from default (usually 16px) */
 }
 
-.like-item {
-  padding-top: 10px !important;
-  font-size: 1.1em !important;
+/* Increase heading sizes */
+.profile-name {
+  font-size: 2.5rem !important; /* Larger name on profile card */
+}
+
+.bounty-name {
+  font-size: 4rem !important; /* Larger name in brackets */
+}
+
+.first-bracket, .last-bracket {
+  font-size: 3.5rem !important; /* Larger brackets */
+}
+
+/* Increase profile title and typewriter text */
+.profile-title {
+  font-size: 1.3rem !important; /* Larger title under name */
+}
+
+.Typewriter__wrapper,
+.Typewriter__cursor {
+  font-size: 1.4rem !important; /* Larger typewriter text */
+}
+
+/* Increase description text */
+.home-description {
+  font-size: 1.2rem !important; /* Larger description text */
+  line-height: 1.7 !important; /* Increased line height for readability */
+  font-family: 'Cascadia Code', monospace;
+}
+
+/* Increase stats numbers and labels */
+.stat-number {
+  font-size: 3rem !important; /* Larger stat numbers */
+}
+
+.stat-label {
+  font-size: 1rem !important; /* Larger stat labels */
+}
+
+/* Increase button text */
+.talk-btn, .work-btn {
+  font-size: 1.2rem !important; /* Larger button text */
+}
+
+/* Increase social icon size */
+.social-icon {
+  width: 45px !important; /* Larger social icons */
+  height: 45px !important;
+  font-size: 1.4rem !important;
+}
+
+/* Increase bounty amount size */
+.bounty-amount {
+  font-size: 3rem !important; /* Larger bounty amount */
+}
+
+.dollar-sign {
+  font-size: 2.5rem !important; /* Larger dollar sign */
+}
+
+/* Increase navbar text size */
+.navbar-nav .nav-link {
+  font-size: 1.3rem !important; /* Larger navigation links */
+}
+
+/* Adjust for mobile screens */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px !important; /* Slightly smaller on mobile */
+  }
+  
+  .profile-name {
+    font-size: 2.2rem !important;
+  }
+  
+  .bounty-name {
+    font-size: 3rem !important;
+  }
+  
+  .home-description {
+    font-size: 1.1rem !important;
+  }
+  
+  .stat-number {
+    font-size: 2.5rem !important;
+  }
+}
+
+/* Add these styles to your src/style.css file */
+
+/* Type effect container */
+.type-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'IM Fell English SC', serif !important;
+  font-size: 1.4rem !important;
+  color: #4a3520 !important;
+  margin: 10px 0;
+  /* Remove any letter-spacing if present */
+  letter-spacing: 0 !important;
+}
+
+/* Constant "Data" part */
+.type-constant {
+  font-family: 'IM Fell English SC', serif !important;
+  font-size: 1.4rem !important;
+  color: #4a3520 !important;
+  font-weight: 600;
+  /* Remove any margin or padding */
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Changing part container */
+.type-changing {
+  display: inline-block;
+  min-width: 100px; /* Adjust based on your longest word */
+  /* Remove any margin or padding */
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Style the typewriter component */
+.type-changing .Typewriter {
+  display: inline-block;
+}
+
+.type-changing .Typewriter__wrapper {
+  font-family: 'IM Fell English SC', serif !important;
+  font-size: 1.4rem !important;
+  color: #4a3520 !important;
+  font-weight: 600;
+  /* Remove any margin or padding */
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.type-changing .Typewriter__cursor {
+  font-family: 'IM Fell English SC', serif !important;
+  font-size: 1.4rem !important;
+  color: #4a3520 !important;
+  /* Adjust cursor position */
+  margin-left: 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .type-wrapper {
+    font-size: 1.2rem !important;
+  }
+  
+  .type-constant {
+    font-size: 1.2rem !important;
+  }
+  
+  .type-changing .Typewriter__wrapper,
+  .type-changing .Typewriter__cursor {
+    font-size: 1.2rem !important;
+  }
+}
+
+/* Add or update these styles in your src/style.css file */
+
+/* Profile image container sizing */
+.profile-image-container {
+  width: 220px; /* Increase/decrease this value to change the overall size */
+  height: 220px; /* Keep the same as width for a perfect circle/square */
+  margin: 0 auto 20px;
+  overflow: hidden;
+  border-radius: 15px; /* Adjust if you want more/less rounded corners */
+}
+
+/* Image sizing within the container */
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintains aspect ratio and fills container */
+  object-position: center center; /* Centers the image in the container */
+}
+
+/* If you want a larger border around the image */
+
+/* For responsive adjustments */
+@media (max-width: 768px) {
+  .profile-image-container {
+    width: 180px; /* Smaller on mobile devices */
+    height: 180px;
+  }
+  
+
+}
+
+/* Add or update these styles in your src/style.css file */
+
+/* Button container */
+.home-buttons {
+  display: flex;
+  gap: 15px; /* Controls spacing between buttons */
+  align-items: center;
+  margin-top: 30px;
+}
+
+/* Let's Talk button */
+.talk-btn {
+  display: inline-block;
+  background-color: #4a3520;
+  color: #e8d9b5 !important;
+  padding: 10px 25px;
+  border-radius: 4px;
+  font-family: 'IM Fell English SC', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid #3c2f2f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.talk-btn:hover {
+  background-color: #5c4738;
+  transform: translateY(-2px);
+  color: #e8d9b5 !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* My Work button */
+.work-btn {
+  display: inline-block;
+  color: #4a3520 !important;
+  font-family: 'IM Fell English SC', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: all 0.3s;
+  background-color: transparent;
+  border: none;
+}
+
+.work-btn:hover {
+  color: #5c4738 !important;
+  transform: translateX(5px);
+}
+
+/* For a small screen, adjust button sizes */
+@media (max-width: 767px) {
+  .home-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .talk-btn, .work-btn {
+    width: 80%;
+    text-align: center;
+    padding: 12px;
+  }
+}
+
+/* Add these styles to your src/style.css file */
+
+/* Sticky Navbar Styles */
+.navbar {
+  position: fixed !important;
+  top: 0 !important;
+  width: 100% !important;
+  z-index: 1000 !important; /* Ensures navbar stays on top of other content */
+  transition: all 0.3s ease-out 0s !important;
+  padding: 0.5rem 2rem !important;
+  background-color: #e8d9b5e6 !important; /* Semi-transparent parchment color */
+  backdrop-filter: blur(8px) !important; /* Adds slight blur effect to background */
+  box-shadow: 0 2px 10px rgba(74, 53, 32, 0.15) !important; /* Subtle shadow */
+}
+
+/* Create padding at the top of all content sections to prevent overlap with fixed navbar */
+.home-section,
+.about-section,
+.project-section,
+.resume-section,
+.blog-section {
+  padding-top: 80px !important; /* Adjust this value based on your navbar height */
+}
+
+/* On scroll effect - darker background */
+.navbar.scrolled {
+  background-color: #e8d9b5 !important; /* Solid parchment color when scrolled */
+  box-shadow: 0 3px 10px rgba(74, 53, 32, 0.2) !important; /* Stronger shadow */
+}
+
+/* Adjust bounty name in navbar */
+.navbar .navbar-brand .bounty-name-small {
+  font-family: 'Pirata One', cursive !important;
+  font-size: 1.5rem !important;
+  color: #4a3520 !important;
+}
+
+/* Style the brackets in the navbar */
+.navbar .navbar-brand .bracket {
+  font-family: 'IM Fell English SC', serif !important;
+  font-size: 1.5rem !important;
+  color: #4a3520 !important;
+}
+
+/* Maintain navbar links styling */
+.navbar-nav .nav-link {
+  color: #4a3520 !important;
+  font-family: 'IM Fell English SC', serif !important;
+  padding-right: 1rem !important;
+  padding-left: 1rem !important;
+  transition: all 0.3s ease-out !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #7d5e3a !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .navbar {
+    padding: 0.5rem 1rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-collapse {
+    background-color: #e8d9b5f5 !important;
+    padding: 10px !important;
+    border-radius: 0 0 10px 10px !important;
+    box-shadow: 0 5px 10px rgba(74, 53, 32, 0.1) !important;
+  }
+}
+
+/* Add these styles to your src/style.css file */
+
+/* Experience/Journey Section Styling */
+.experience-section {
+  position: relative !important;
+  padding-top: 120px !important;
+  padding-bottom: 50px !important;
+  color: #4a3520 !important;
+  min-height: 100vh;
+}
+
+.experience-description {
+  color: #4a3520 !important;
+  font-size: 1.1rem !important;
+  margin-bottom: 40px !important;
+  text-align: center !important;
+  max-width: 800px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   font-family: sans-serif !important;
 }
 
-.like-btn {
-  background-color: #934cce5e !important;
-  border-color: #934cce5e !important;
-  padding: 0.25rem 0.98rem !important;
-  border-radius: 5px !important;
-  line-height: 1.4 !important;
-  transition: 0.3s ease !important;
+/* Treasure Map Container */
+.treasure-map-container {
+  position: relative;
+  width: 100%;
+  min-height: 1200px; /* Adjust based on content */
+  margin-bottom: 50px;
 }
 
-.like-btn:hover {
-  transform: translateY(-2px) !important;
-  background-color: #a24dd386 !important;
-  border-color: #a24dd386 !important;
+.treasure-map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #e8d9b5;
+  background-image: url("https://www.transparenttextures.com/patterns/old-paper.png");
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 6px 15px rgba(74, 53, 32, 0.2);
+  overflow: hidden;
 }
 
-.animate-like {
-  animation-name: likeAnimation;
-  animation-fill-mode: forwards;
-  animation-duration: 0.85s;
+/* Add a weathered border/edge effect */
+.treasure-map::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 15px solid transparent;
+  border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill-opacity="0.25"><rect x="0" y="0" width="50" height="50" fill="%234a3520"/><rect x="50" y="50" width="50" height="50" fill="%234a3520"/></svg>') 30;
+  pointer-events: none;
 }
-@keyframes likeAnimation {
-  0% {
-    transform: scale(1.5);
+
+/* Map Path - The journey line */
+.map-path {
+  position: absolute;
+  top: 100px;
+  left: 10%;
+  width: 80%;
+  height: 85%;
+  background: none;
+  border: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 800 1000"><path d="M50,50 C100,100 200,90 250,150 C300,210 220,300 300,350 C400,420 500,400 600,500 C700,600 650,750 550,830 C450,910 350,880 250,920" fill="none" stroke="%234a3520" stroke-width="6" stroke-dasharray="15,10" stroke-linecap="round"/></svg>');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 0;
+}
+
+/* Compass on the map */
+.map-compass {
+  position: absolute;
+  top: 40px;
+  right: 70px;
+  font-size: 5rem;
+  color: #4a3520;
+  opacity: 0.8;
+  transform: rotate(15deg);
+}
+
+/* Education Markers */
+.education-markers {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.education-marker {
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+#sbu {
+  top: 180px;
+  left: 30%;
+}
+
+#drait {
+  bottom: 180px;
+  right: 35%;
+}
+
+.marker-icon.education {
+  background-color: #4a3520;
+  color: #e8d9b5;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 10;
+}
+
+.marker-icon.education:hover {
+  transform: scale(1.1);
+}
+
+.education-marker .marker-content {
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 2px solid #4a3520;
+  border-radius: 8px;
+  padding: 15px;
+  margin-left: 10px;
+  min-width: 280px;
+  max-width: 350px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.education-marker .marker-content h3 {
+  font-family: 'Pirata One', cursive;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  color: #4a3520;
+}
+
+.education-marker .marker-content p {
+  margin-bottom: 3px;
+  font-family: 'IM Fell English SC', serif;
+  color: #4a3520;
+}
+
+.education-marker .marker-content p.duration,
+.education-marker .marker-content p.location {
+  font-size: 0.9rem;
+  font-family: sans-serif;
+  opacity: 0.8;
+}
+
+/* Experience Markers */
+.experience-markers {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.experience-marker {
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+}
+
+#amazon-current {
+  top: 90px;
+  right: 20%;
+}
+
+#amazon-intern {
+  top: 320px;
+  left: 25%;
+}
+
+#myntra {
+  top: 550px;
+  right: 25%;
+}
+
+#rapido {
+  top: 780px;
+  left: 20%;
+}
+
+.experience-marker .marker-icon {
+  background-color: #4a3520;
+  color: #e8d9b5;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 10;
+  border: 3px dashed #e8d9b5;
+}
+
+.experience-marker .marker-icon:hover {
+  transform: scale(1.1);
+}
+
+.experience-marker.expanded .marker-icon {
+  background-color: #fc4c02;
+  transform: scale(1.1);
+}
+
+.experience-card {
+  display: none;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transition: all 0.5s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #4a3520;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-left: 15px;
+  margin-top: 0;
+  overflow: hidden;
+}
+
+.experience-card.show {
+  display: block;
+  width: 380px;
+  height: auto;
+  opacity: 1;
+}
+
+.experience-card .card-header {
+  background-color: #4a3520;
+  color: #e8d9b5;
+  border: none;
+  padding: 15px;
+}
+
+.experience-card .card-header h3 {
+  font-family: 'Pirata One', cursive;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.experience-card .card-header h4 {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.experience-card .card-header h5 {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 1rem;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
+.card-metadata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(74, 53, 32, 0.2);
+}
+
+.experience-details ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.experience-details li {
+  margin-bottom: 8px;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+/* Skill Islands */
+.skill-islands {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.skill-island {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px dashed #4a3520;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#data-engineering {
+  top: 20%;
+  left: 15%;
+}
+
+#data-science {
+  top: 40%;
+  right: 10%;
+}
+
+#visualization {
+  bottom: 20%;
+  left: 40%;
+}
+
+.island-icon {
+  font-size: 2rem;
+  color: #4a3520;
+  margin-bottom: 5px;
+}
+
+.skill-island h4 {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #4a3520;
+}
+
+.skill-island p {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  color: #4a3520;
+}
+
+/* Treasure Chest */
+.treasure-chest {
+  position: absolute;
+  bottom: 50px;
+  right: 60px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 3px solid #4a3520;
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+
+.treasure-chest::before {
+  content: "✖";
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  font-size: 2.5rem;
+  color: #4a3520;
+  font-weight: bold;
+}
+
+.treasure-chest h3 {
+  font-family: 'Pirata One', cursive;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #4a3520;
+}
+
+.treasure-chest ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.treasure-chest li {
+  font-family: 'IM Fell English SC', serif;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  background-color: rgba(74, 53, 32, 0.1);
+  border-radius: 5px;
+  text-align: center;
+  color: #4a3520;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .map-path {
+    display: none;
   }
-  100% {
-    transform: scale(1);
+  
+  .experience-marker, .education-marker, .skill-island, .treasure-chest {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    margin-bottom: 20px;
+    width: 100%;
   }
-}
-
-.fork-btn {
-  font-size: 1.1em !important;
-  padding-top: 10px !important;
-}
-
-.fork-btn-inner {
-  line-height: 1.4em !important;
-  background-color: #934cce5e !important;
-  padding: 0.25rem 1.1rem !important;
-  vertical-align: middle !important;
-  text-align: center !important;
-}
-
-.fork-btn-inner:hover {
-  transform: translateY(-2px) !important;
-  background-color: #a24dd386 !important;
-  border-color: #a24dd386 !important;
-}
-.fork-btn-inner::after {
-  display: none !important;
+  
+  .experience-marker {
+    display: block;
+  }
+  
+  .experience-card.show {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  
+  .skill-island {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    padding: 15px;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  
+  .island-icon {
+    margin-right: 15px;
+    margin-bottom: 0;
+  }
+  
+  .treasure-chest {
+    width: 100%;
+  }
+  
+  .education-marker {
+    flex-direction: column;
+  }
+  
+  .education-marker .marker-content {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 100%;
+  }
 }
