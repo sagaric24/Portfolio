@@ -4,11 +4,11 @@ import Typewriter from "typewriter-effect";
 function Type() {
   return (
     <div className="type-wrapper">
-      <span className="type-constant">Data </span>
+      <span className="type-constant">Data</span>
       <span className="type-changing">
         <Typewriter
           options={{
-            strings: ["Analyst", "  Scientist", "  Engineer"],
+            strings: ["Analyst", "Scientist", "Engineer"],
             autoStart: true,
             loop: true,
             deleteSpeed: 50,

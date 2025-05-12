@@ -1,16 +1,17 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import ExperienceCard from "./ExperienceCard";
+import { Container } from "react-bootstrap";
+import { FaMapPin, FaCompass, FaLock, FaArrowUp } from "react-icons/fa";
 import Particle from "../Particle";
-import { 
-  FaAmazon, 
-  FaShoppingCart, 
-  FaGraduationCap, 
-  FaLaptopCode,
-  FaMapMarkedAlt,
-  FaCompass
-} from "react-icons/fa";
-import { SiPython, SiTableau } from "react-icons/si";
+
+// Import images - you'll need to add these to your Assets folder
+import drAmbedkarLogo from "../../Assets/dr-ambedkar-logo.png";
+import iitGuwahatiLogo from "../../Assets/iit-guwahati-logo.png";
+import rapidoLogo from "../../Assets/rapido-logo.png";
+import myntraLogo from "../../Assets/myntra-logo.png";
+import stonyBrookLogo from "../../Assets/stonybrook-logo.png";
+import amazonLogo from "../../Assets/amazon-logo.png";
+import divHacksLogo from "../../Assets/divhacks-logo.png";
+import lecturerLogo from "../../Assets/lecturer-logo.png";
 
 function WorkExperience() {
   return (
@@ -30,136 +31,197 @@ function WorkExperience() {
         <div className="treasure-map-container">
           {/* Treasure Map Background */}
           <div className="treasure-map">
-            {/* Map Path */}
-            <div className="map-path"></div>
+            {/* Scroll Indicator (at top) */}
+            <div className="scroll-indicator">
+              <span>Begin the Journey</span>
+              <FaArrowUp className="scroll-arrow" />
+            </div>
+            
+            {/* Treasure Chest at top */}
+            
 
+            {/* S-Shaped Map Path */}
+            <div className="map-path"></div>
+            
             {/* Map Compass */}
             <div className="map-compass">
               <FaCompass />
             </div>
 
-            {/* Education Markers */}
-            <div className="education-markers">
-              <div className="education-marker" id="sbu">
-                <div className="marker-icon education">
-                  <FaGraduationCap />
-                </div>
-                <div className="marker-content">
-                  <h3>Stony Brook University</h3>
-                  <p>Masters of Science in Data Science</p>
-                  <p className="duration">08/2023 - 05/2025</p>
-                  <p className="location">Stony Brook, NY, USA</p>
-                </div>
+            {/* Journey Points in REVERSED Order with Icons ON the S-curve line */}
+            
+            {/* 9. What's Next - FUTURE (Top) */}
+            <div className="journey-marker achievement-marker future">
+              <div className="marker-icon">
+                <FaLock />
               </div>
-
-              <div className="education-marker" id="drait">
-                <div className="marker-icon education">
-                  <FaGraduationCap />
+              <div className="marker-content achievement-content">
+                <h3>Unlocking Next Level Soon</h3>
+                <p className="normal-font">The adventure continues! Ready to conquer new data challenges and unlock achievements in the next chapter of my journey.</p>
+              </div>
+            </div>
+            
+            {/* 8. Hackathon Win (Left) */}
+            <div className="journey-marker achievement-marker hackathon">
+              <div className="marker-icon">
+                <img src={divHacksLogo} alt="Div Hacks" className="icon-image" />
+              </div>
+              <div className="marker-content achievement-content">
+                <h3>First Place in Div Hacks</h3>
+                <p className="normal-font">Won first place in the Division Hacks competition with an innovative data solution that leveraged machine learning to predict customer behavior patterns.</p>
+              </div>
+            </div>
+            
+            {/* 7. Amazon (Right) */}
+            <div className="journey-marker experience-marker amazon">
+              <div className="marker-icon">
+                <img src={amazonLogo} alt="Amazon" className="icon-image" />
+              </div>
+              <div className="marker-content">
+                <div className="card-header">
+                  <h3>Whole Foods Market / Amazon Grocery</h3>
+                  <h4>Business Intelligence Engineer Intern</h4>
                 </div>
-                <div className="marker-content">
-                  <h3>Dr. Ambedkar Institute of Technology</h3>
-                  <p>Bachelor of Engineering in Computer Science</p>
-                  <p className="duration">08/2016 - 09/2020</p>
-                  <p className="location">Bangalore, KA, IN</p>
+                <div className="card-body">
+                  <div className="card-metadata">
+                    <p className="duration">
+                      <strong>06/2024 - Present</strong>
+                    </p>
+                    <p className="location">
+                      <FaMapPin /> New York, NY, USA
+                    </p>
+                  </div>
+                  <div className="experience-details">
+                    <ul>
+                      <li className="normal-font">Built scalable ELT/ETL pipelines using AWS Glue, IAM, S3, Redshift, and dbt to ingest over 30M records weekly, enabling marketing team to aggregate data from 30+ third-party media sources.</li>
+                      <li className="normal-font">Spearheaded a data compliance initiative to optimize and certify 1000+ Sandbox tables containing customer-sensitive information under Amazon's Certificate Attestation and OD3 deletion protocols.</li>
+                      <li className="normal-font">Replaced Excel-based reporting with automated Redshift and SQL-based data marts, accelerating time-to-insight from 2 business days to a few hours.</li>
+                      <li className="normal-font">Built a centralized SQL Query Management System using Python, AWS Lambda, SQS, and CloudWatch to automatically detect and remediate deprecated schema elements across 350+ queries.</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-
-            {/* Experience Cards */}
-            <div className="experience-markers">
-              <ExperienceCard
-                id="amazon-current"
-                company="Amazon Grocery / Whole Foods Market"
-                title="Business Intelligence Engineer (Co-op)"
-                duration="08/2024 - Present"
-                location="Stony Brook, NY, USA"
-                icon={<FaAmazon />}
-                description={[
-                  "Engineered ELT/ETL pipelines using AWS Glue, Redshift, IAM, S3, and dbt to process 30M+ records weekly, enabling integrations and data ingestion with 30+ third-party media sources and improving BI efficiency.",
-                  "Led a data compliance initiative certifying 1,000+ Sandbox tables under OD3 and Certificate Attestation protocols, enhancing privacy workflows across 3 departments.",
-                  "Automated legacy Excel reports through SQL and Redshift Spectrum, reducing data turnaround from 2 days to a few hours and strengthening visibility into key e-commerce metrics.",
-                  "Designed and deployed QuickSight dashboards to monitor fulfillment KPIs such as Inventory Not Found (INF), cutting INF rates from 3.2% to 1.7% after launching a new fulfillment center."
-                ]}
-              />
-
-              <ExperienceCard
-                id="amazon-intern"
-                company="Amazon Grocery / Whole Foods Market"
-                title="Business Intelligence Engineer Intern"
-                duration="06/2024 - 08/2024"
-                location="Austin, TX, USA"
-                icon={<FaAmazon />}
-                description={[
-                  "Developed a centralized SQL Query Management System using Python, AWS Lambda, SQS, and CloudWatch to auto-update 350+ WBR queries, reducing latency by 85%.",
-                  "Embedded SageMaker forecast data models into QuickSight dashboards for SKU-level assortment planning, improving stock accuracy across 500+ stores and 30+ categories."
-                ]}
-              />
-
-              <ExperienceCard
-                id="myntra"
-                company="Myntra / Walmart"
-                title="Data Scientist / Data Analyst"
-                subtitle="Customer Service - Experience Team"
-                duration="12/2021 - 07/2023"
-                location="Bangalore, KA, IN"
-                icon={<FaShoppingCart />}
-                description={[
-                  "Created an NLP sentiment analysis engine with BERT and AWS Comprehend, improving real-time feedback handling and lifting NPS by 3 points.",
-                  "Drove experimentation using A/B testing and causal inference in an Agile environment, delivering $250K annual savings through optimized SMS strategies in collaboration with cross-functional teams across CRM, finance, and marketing.",
-                  "Performed EDA and K-means clustering to segment customers, enabling personalized targeting and raising new user conversion from 4.3% to 4.5% and identifying anomalous activity patterns, which contributed to early fraud detection.",
-                  "Delivered interactive Power BI dashboards tracking service KPIs, which led to a 20% drop in unresolved issues and enhanced vendor performance across the marketplace."
-                ]}
-              />
-
-              <ExperienceCard
-                id="rapido"
-                company="Rapido"
-                title="Data Analyst"
-                subtitle="Customer Retention - Acquisition Team"
-                duration="12/2020 - 12/2021"
-                location="Bangalore, KA, IN"
-                icon={<FaMapMarkedAlt />}
-                description={[
-                  "Built forecasting models and dynamic pricing engines using XGBoost, leading to a 5% increase in ride retention and higher customer engagement.",
-                  "Developed real-time Tableau dashboards for city-level demand/supply tracking, reducing driver idle time by 10% through data-driven incentive tuning."
-                ]}
-              />
-            </div>
-
-            {/* Skill Islands */}
-            <div className="skill-islands">
-              <div className="skill-island" id="data-engineering">
-                <div className="island-icon">
-                  <FaLaptopCode />
-                </div>
-                <h4>Data Engineering</h4>
-                <p>AWS, ETL/ELT, SQL</p>
+            
+            {/* 6. Stony Brook (Left) */}
+            <div className="journey-marker education-marker stony">
+              <div className="marker-icon">
+                <img src={stonyBrookLogo} alt="Stony Brook University" className="icon-image" />
               </div>
-              <div className="skill-island" id="data-science">
-                <div className="island-icon">
-                  <SiPython />
+              <div className="marker-content">
+                <h3>Stony Brook University</h3>
+                <p>Masters of Science in Data Science</p>
+                <p className="duration">08/2023 - 05/2025</p>
+                <p className="location">
+                  <FaMapPin /> Stony Brook, NY, USA
+                </p>
+                <div className="education-details">
+                  <p className="normal-font">Relevant Coursework: Big Data Analytics, Probability & Statistics, SAS and R Programming, Statistical Learning, Data Visualization, Machine Learning</p>
                 </div>
-                <h4>Data Science</h4>
-                <p>ML, NLP, Statistics</p>
-              </div>
-              <div className="skill-island" id="visualization">
-                <div className="island-icon">
-                  <SiTableau />
-                </div>
-                <h4>Visualization</h4>
-                <p>Dashboards, Reporting</p>
               </div>
             </div>
-
-            {/* Treasure Chest */}
-            <div className="treasure-chest">
-              <h3>Professional Treasures</h3>
-              <ul>
-                <li>BI Systems Architecture</li>
-                <li>ML Model Deployment</li>
-                <li>Data Compliance</li>
-                <li>ETL Pipeline Design</li>
-              </ul>
+            
+            {/* 5. Guest Lecturer Achievement (Right) */}
+            <div className="journey-marker achievement-marker lecturer">
+              <div className="marker-icon">
+                <img src={lecturerLogo} alt="Guest Lecturer" className="icon-image" />
+              </div>
+              <div className="marker-content achievement-content">
+                <h3>Guest Lecturer</h3>
+                <p className="normal-font">Invited as a guest lecturer to share data science knowledge and industry insights with students at local bootcamps, focusing on real-world applications of machine learning and data visualization techniques.</p>
+              </div>
+            </div>
+            
+            {/* 4. Myntra (Left) */}
+            <div className="journey-marker experience-marker myntra">
+              <div className="marker-icon">
+                <img src={myntraLogo} alt="Myntra" className="icon-image" />
+              </div>
+              <div className="marker-content">
+                <div className="card-header">
+                  <h3>Myntra / Flipkart</h3>
+                  <h4>Data Analyst / Data Scientist</h4>
+                  <h5>Customer Experience Team</h5>
+                </div>
+                <div className="card-body">
+                  <div className="card-metadata">
+                    <p className="duration">
+                      <strong>12/2021 - 07/2023</strong>
+                    </p>
+                    <p className="location">
+                      <FaMapPin /> Bangalore, KA, IN
+                    </p>
+                  </div>
+                  <div className="experience-details">
+                    <ul>
+                      <li className="normal-font">Created an NLP engine using BERT and AWS Comprehend to extract sentiment from customer support tickets, contributing to a 3-point uplift in Net Promoter Score (NPS).</li>
+                      <li className="normal-font">Designed experimentation frameworks using A/B testing and causal inference to optimize communication strategies, resulting in $250K annual cost savings.</li>
+                      <li className="normal-font">Led EDA and customer segmentation using K-means clustering to identify high-risk and high-value cohorts, helping increase new user conversion rates from 4.3% to 4.5%.</li>
+                      <li className="normal-font">Built real-time service dashboards in Power BI to track KPIs, contributing to a 20% drop in unresolved issues and driving quality improvements.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* 3. Rapido (Right) */}
+            <div className="journey-marker experience-marker rapido">
+              <div className="marker-icon">
+                <img src={rapidoLogo} alt="Rapido" className="icon-image" />
+              </div>
+              <div className="marker-content">
+                <div className="card-header">
+                  <h3>Rapido</h3>
+                  <h4>Associate Data Analyst</h4>
+                  <h5>Customer Retention Team</h5>
+                </div>
+                <div className="card-body">
+                  <div className="card-metadata">
+                    <p className="duration">
+                      <strong>12/2020 - 12/2021</strong>
+                    </p>
+                    <p className="location">
+                      <FaMapPin /> Bangalore, KA, IN
+                    </p>
+                  </div>
+                  <div className="experience-details">
+                    <ul>
+                      <li className="normal-font">Designed time-series forecasting models and implemented dynamic pricing strategies using XGBoost to improve customer engagement, resulting in a 5% increase in ride retention and higher per-user revenue.</li>
+                      <li className="normal-font">Developed real-time Tableau dashboards for monitoring city-level supply-demand dynamics, enabling the operations team to proactively manage driver availability and reduce idle time by 10% through data-informed incentives.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* 2. IIT Guwahati Certificate (Left) */}
+            <div className="journey-marker education-marker cert">
+              <div className="marker-icon">
+                <img src={iitGuwahatiLogo} alt="IIT Guwahati" className="icon-image" />
+              </div>
+              <div className="marker-content">
+                <h3>IIT Guwahati</h3>
+                <p>PG Certificate in Data Science</p>
+                <p className="duration">2020</p>
+                <p className="location">
+                  <FaMapPin /> Guwahati, IN
+                </p>
+              </div>
+            </div>
+            
+            {/* 1. Dr. Ambedkar Institute (Bottom) */}
+            <div className="journey-marker education-marker start">
+              <div className="marker-icon">
+                <img src={drAmbedkarLogo} alt="Dr. Ambedkar Institute" className="icon-image" />
+              </div>
+              <div className="marker-content">
+                <h3>Dr. Ambedkar Institute of Technology</h3>
+                <p>Bachelor of Engineering in Computer Science</p>
+                <p className="duration">08/2016 - 09/2020</p>
+                <p className="location">
+                  <FaMapPin /> Bangalore, KA, IN
+                </p>
+              </div>
             </div>
           </div>
         </div>

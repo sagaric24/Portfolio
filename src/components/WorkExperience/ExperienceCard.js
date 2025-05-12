@@ -1,27 +1,26 @@
 import React, { useState } from "react";
-import { Card } from "react-bootstrap";
 import { FaMapPin } from "react-icons/fa";
 
 function ExperienceCard(props) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className={`experience-marker ${expanded ? 'expanded' : ''}`} id={props.id}>
+    <div className={`journey-marker experience-marker ${props.position} ${expanded ? 'expanded' : ''}`} id={props.id}>
       <div 
         className="marker-icon" 
         onClick={() => setExpanded(!expanded)}
       >
-        {props.icon}
+        {props.isIcon ? props.iconImage : <img src={props.iconImage} alt={props.company} className="icon-image" />}
       </div>
 
-      <Card className={`marker-content experience-card ${expanded ? 'show' : ''}`}>
-        <Card.Header>
+      <div className={`marker-content experience-card ${expanded ? 'show' : ''}`}>
+        <div className="card-header">
           <h3>{props.company}</h3>
           <h4>{props.title}</h4>
           {props.subtitle && <h5>{props.subtitle}</h5>}
-        </Card.Header>
+        </div>
         
-        <Card.Body>
+        <div className="card-body">
           <div className="card-metadata">
             <p className="duration">
               <strong>{props.duration}</strong>
@@ -38,8 +37,8 @@ function ExperienceCard(props) {
               ))}
             </ul>
           </div>
-        </Card.Body>
-      </Card>
+        </div>
+      </div>
     </div>
   );
 }

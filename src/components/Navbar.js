@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { ImHome } from "react-icons/im";
 import { FaUser, FaProjectDiagram } from "react-icons/fa";
 import { CgFileDocument } from "react-icons/cg";
-import { BsBook } from "react-icons/bs";
+import { FaMapMarkedAlt } from "react-icons/fa"; // Map icon for the journey experience page
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -96,10 +96,10 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                to="/blogs"
+                to="/experience"
                 onClick={() => updateExpanded(false)}
               >
-                <BsBook style={{ marginBottom: "2px" }} /> Blogs
+                <FaMapMarkedAlt style={{ marginBottom: "2px" }} /> Journey Map
               </Nav.Link>
             </Nav.Item>
           </Nav>
