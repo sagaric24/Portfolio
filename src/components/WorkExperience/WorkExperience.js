@@ -33,7 +33,7 @@ function WorkExperience() {
           <div className="treasure-map">
             {/* Scroll Indicator (at top) */}
             <div className="scroll-indicator">
-              <span>Begin the Journey</span>
+              <span>Unlocking...</span>
               <FaArrowUp className="scroll-arrow" />
             </div>
             
