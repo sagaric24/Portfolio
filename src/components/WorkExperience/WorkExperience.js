@@ -1,6 +1,7 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import { FaMapPin, FaCompass, FaLock, FaArrowUp } from "react-icons/fa";
+import { FaMapPin, FaCompass, FaLock } from "react-icons/fa";
+import { GiFootprint } from "react-icons/gi";
 import Particle from "../Particle";
 
 // Import images - you'll need to add these to your Assets folder
@@ -37,8 +38,9 @@ function WorkExperience() {
           >
             {/* Scroll Indicator (at top) */}
             <div className="scroll-indicator">
-              <span>Unlocking...</span>
-              <FaArrowUp className="scroll-arrow" />
+              <span>What's Next?</span>
+              <GiFootprint className="scroll-footprint left" />
+              <GiFootprint className="scroll-footprint right" />
             </div>
             
             {/* S-Shaped Map Path */}
