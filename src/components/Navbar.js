@@ -4,9 +4,8 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import { ImHome } from "react-icons/im";
-import { FaUser, FaProjectDiagram } from "react-icons/fa";
+import { FaProjectDiagram, FaTools, FaMapMarkedAlt } from "react-icons/fa";
 import { CgFileDocument } from "react-icons/cg";
-import { FaMapMarkedAlt } from "react-icons/fa"; // Map icon for the journey experience page
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -69,11 +68,11 @@ function NavBar() {
                 to="/about"
                 onClick={() => updateExpanded(false)}
               >
-                <FaUser style={{ marginBottom: "2px" }} /> Skills
+                <FaTools style={{ marginBottom: "2px" }} /> Skills
               </Nav.Link>
             </Nav.Item>
 
-             <Nav.Item>
+            <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/experience"
@@ -93,7 +92,7 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item>
+            {/* <Nav.Item>
               <Nav.Link
                 as={Link}
                 to="/resume"
@@ -101,7 +100,7 @@ function NavBar() {
               >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
               </Nav.Link>
-            </Nav.Item>
+            </Nav.Item> */}
 
           </Nav>
         </Navbar.Collapse>
