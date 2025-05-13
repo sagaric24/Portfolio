@@ -37,11 +37,11 @@ function WorkExperience() {
             }}
           >
             {/* Scroll Indicator (at top) */}
-            <div className="scroll-indicator">
+            {/* <div className="scroll-indicator">
               <span>What's Next?</span>
               <GiFootprint className="scroll-footprint left" />
               <GiFootprint className="scroll-footprint right" />
-            </div>
+            </div> */}
             
             {/* S-Shaped Map Path */}
             <div className="map-path"></div>

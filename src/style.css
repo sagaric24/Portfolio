@@ -667,6 +667,7 @@ body {
   box-shadow: 0 6px 15px rgba(74, 53, 32, 0.2);
   overflow: hidden;
   border: 2px solid #4a3520;
+  /* padding-top: 15px !important; */
 }
 
 /* Weathered border effect */
@@ -757,11 +758,14 @@ body {
 }
 
 /* Left-Right Alternating Positioning */
-.journey-marker.future,
+/* .journey-marker.future, */
 .journey-marker.amazon,
 .journey-marker.rapido,
 .journey-marker.myntra {
   right: 10px;
+}
+.journey-marker.future{
+  right: 35px;
 }
 
 .journey-marker.hackathon,
@@ -1328,97 +1332,3 @@ body {
   color: #e8d9b5;
 }
 
-/* Add these styles to your src/style.css file */
-
-/* Replace arrow with footprints */
-.scroll-indicator {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-55%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #4a3520;
-  opacity: 0.9;
-  z-index: 2;
-  width: 200px; /* Give it some width for the footprints */
-}
-
-.scroll-indicator span {
-  font-family: 'IM Fell English SC', serif;
-  margin-bottom: 10px;
-}
-
-/* Remove the old arrow animation */
-.scroll-arrow {
-  display: none;
-}
-
-/* Add footprint styles */
-.scroll-footprint {
-  font-size: 1.8rem;
-  color: #4a3520;
-  opacity: 0.8;
-  position: relative;
-  animation: footprint-bounce 3s infinite;
-}
-
-/* Position the left and right footprints */
-.scroll-footprint.left {
-  transform: rotate(-30deg) !important;
-  left: -10px;
-  top: -15px;
-  animation-delay: 0s;
-}
-
-.scroll-footprint.right {
-  transform: rotate(50deg) scaleX(-1) !important;
-  left: 10px;
-  top: -15px;
-  animation-delay: 0.5s;
-}
-
-/* Animate the footprints with a walking motion */
-@keyframes footprint-bounce {
-  0%, 100% {
-    transform: translateY(0) rotate(10deg);
-    opacity: 0.2;
-  }
-  25% {
-    transform: translateY(-5px) rotate(10deg);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translateY(-10px) rotate(10deg);
-    opacity: 0.6;
-  }
-  75% {
-    transform: translateY(-5px) rotate(10deg);
-    opacity: 0.4;
-  }
-}
-
-/* Adjust for the second footprint */
-.scroll-footprint.right {
-  animation-name: footprint-bounce-right;
-}
-
-@keyframes footprint-bounce-right {
-  0%, 100% {
-    transform: translateY(0) rotate(-10deg) scaleX(-1);
-    opacity: 0.2;
-  }
-  25% {
-    transform: translateY(-5px) rotate(-10deg) scaleX(-1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translateY(-10px) rotate(-10deg) scaleX(-1);
-    opacity: 0.6;
-  }
-  75% {
-    transform: translateY(-5px) rotate(-10deg) scaleX(-1);
-    opacity: 0.4;
-  }
-}
