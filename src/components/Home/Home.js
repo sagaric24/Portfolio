@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import Particle from "../Particle";
 import Type from "./Type";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
@@ -62,8 +63,8 @@ I clean up messy datasets, build pipelines that don't cry in production, and whi
               </div>
 
               <div className="home-buttons">
-                <a href="#contact" className="talk-btn">Let's Talk</a>
-                <a href="#projects" className="work-btn">My Work →</a>
+                {/* <a href="#contact" className="talk-btn">Let's Talk</a> */}
+                <Link to="/experience" className="talk-btn">My Work →</Link>
               </div>
             </Col>
           </Row>
