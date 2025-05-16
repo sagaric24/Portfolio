@@ -46,9 +46,9 @@ function WorkExperience() {
             <div className="map-path"></div>
             
             {/* Map Compass */}
-            <div className="map-compass">
+            {/* <div className="map-compass">
               <FaCompass />
-            </div>
+            </div> */}
 
             {/* Journey Points in REVERSED Order with Icons ON the S-curve line */}
             

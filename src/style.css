@@ -702,17 +702,17 @@ body {
 }
 
 /* Compass on the map */
-.map-compass {
+/* .map-compass {
   position: absolute;
   top: 40px;
-  /* right: 100px; */
+  right: 100px;
   left: 60px;
   font-size: 3rem;
   color: #4a3520;
   opacity: 0.7;
   transform: rotate(15deg);
   z-index: 1;
-}
+} */
 
 /* Journey Marker Common Styles */
 .journey-marker {
