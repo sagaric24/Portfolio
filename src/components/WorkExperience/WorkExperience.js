@@ -13,9 +13,15 @@ import stonyBrookLogo from "../../Assets/stonybrook-logo.png";
 import amazonLogo from "../../Assets/amazon-logo.png";
 import divHacksLogo from "../../Assets/divhacks-logo.png";
 import lecturerLogo from "../../Assets/lecturer-logo.png";
+import wiseInstructorLogo from "../../Assets/stonybrook-logo.png"; // Reusing Stony Brook logo for WISE
 import mapBackgroundImage from "../../Assets/map-background.png";
 
 function WorkExperience() {
+  const normalFontStyle = {
+    fontFamily: "'IM Fell English SC', serif",
+    fontSize: "0.95rem"
+  };
+
   return (
     <Container fluid className="experience-section wanted-poster">
       <Particle />
@@ -23,7 +29,7 @@ function WorkExperience() {
         <h1 className="bounty-name">
           Journey Map 📜
         </h1>
-        <p className="experience-description normal-font">
+        <p className="experience-description normal-font" style={normalFontStyle}>
           Chart of my professional voyage through the high seas of data science, tracking the treasures
           I've discovered and skills I've mastered along the way.
         </p>
@@ -36,13 +42,6 @@ function WorkExperience() {
               backgroundImage: `url(${mapBackgroundImage}), url("https://www.transparenttextures.com/patterns/old-paper.png")`
             }}
           >
-            {/* Scroll Indicator (at top) */}
-            {/* <div className="scroll-indicator">
-              <span>What's Next?</span>
-              <GiFootprint className="scroll-footprint left" />
-              <GiFootprint className="scroll-footprint right" />
-            </div> */}
-            
             {/* S-Shaped Map Path */}
             <div className="map-path"></div>
             
@@ -60,7 +59,7 @@ function WorkExperience() {
               </div>
               <div className="marker-content achievement-content">
                 <h3>Unlocking Next Level Soon</h3>
-                <p className="normal-font">The adventure continues! Ready to conquer new data challenges and unlock achievements in the next chapter of my journey.</p>
+                <p className="normal-font" style={normalFontStyle}>The adventure continues! Ready to conquer new data challenges and unlock achievements in the next chapter of my journey.</p>
               </div>
             </div>
             
@@ -70,8 +69,11 @@ function WorkExperience() {
                 <img src={divHacksLogo} alt="Div Hacks" className="icon-image" />
               </div>
               <div className="marker-content achievement-content">
-                <h3>First Place in Div Hacks</h3>
-                <p className="normal-font">Won first place in the Division Hacks competition with an innovative data solution that leveraged machine learning to predict customer behavior patterns.</p>
+                <h3>First Place at Div Hacks 2024</h3>
+                <p className="normal-font" style={normalFontStyle}>Won first place at Columbia University's competitive 24-hour hackathon with an innovative AR stroke rehabilitation solution.</p>
+                <p className="normal-font" style={normalFontStyle}>Created interactive AR games using Snap Spectacles that transform stroke rehabilitation therapy, making it engaging and effective for patients.</p>
+                <p className="normal-font" style={normalFontStyle}>Awards: Best Overall Hack (1st), Best Health Project (1st), Best Use of Snap AR (3rd), Best Use of Google NotebookLM (5th).</p>
+                <p className="normal-font" style={normalFontStyle}>Addressed patient engagement challenges in rehabilitation through immersive technology, demonstrating how AR can improve healthcare outcomes.</p>
               </div>
             </div>
             
@@ -95,12 +97,36 @@ function WorkExperience() {
                     </p>
                   </div>
                   <div className="experience-details">
-                    <ul>
-                      <li className="normal-font">Built scalable ELT/ETL pipelines using AWS Glue, IAM, S3, Redshift, and dbt to ingest over 30M records weekly, enabling marketing team to aggregate data from 30+ third-party media sources.</li>
-                      <li className="normal-font">Spearheaded a data compliance initiative to optimize and certify 1000+ Sandbox tables containing customer-sensitive information under Amazon's Certificate Attestation and OD3 deletion protocols.</li>
-                      <li className="normal-font">Replaced Excel-based reporting with automated Redshift and SQL-based data marts, accelerating time-to-insight from 2 business days to a few hours.</li>
-                      <li className="normal-font">Built a centralized SQL Query Management System using Python, AWS Lambda, SQS, and CloudWatch to automatically detect and remediate deprecated schema elements across 350+ queries.</li>
-                    </ul>
+                    <p className="normal-font" style={normalFontStyle}><strong>Overview:</strong> Within Amazon's Whole Foods Market/Amazon Grocery division, the business intelligence team supports data-driven decision making for marketing, operations, and strategic planning. The team focuses on building scalable data infrastructure and analytics solutions to leverage Amazon's vast data ecosystem.</p>
+                    <p className="normal-font" style={normalFontStyle}><strong>My Role:</strong> As Business Intelligence Engineer Intern, I design and implement data pipelines, compliance frameworks, and automated reporting systems. I collaborate with cross-functional teams to transform business requirements into technical solutions and ensure data quality and governance.</p>
+                    <p className="normal-font" style={normalFontStyle}><strong>Skills:</strong> Data pipeline architecture (ETL/ELT), AWS services (Glue, IAM, S3, Redshift, Lambda, SQS, CloudWatch), Data modeling and SQL optimization, Data transformation tools (dbt), Python development for automation, Data compliance and governance frameworks</p>
+                    <p className="normal-font" style={normalFontStyle}><strong>Impacts:</strong> Built AWS ETL pipelines ingesting 30M+ weekly records from 30+ media sources and optimized 1000+ Sandbox tables under Amazon's compliance protocols. Automated SQL-based data marts, reducing reporting time from days to hours, and created a Python system to detect and fix deprecated elements across 350+ queries.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            {/* New position: WISE Project Instructor at Stony Brook */}
+            <div className="journey-marker experience-marker wise-instructor">
+              <div className="marker-icon">
+                <img src={wiseInstructorLogo} alt="WISE Instructor" className="icon-image" />
+              </div>
+              <div className="marker-content">
+                <div className="card-header">
+                  <h3>Women in Science and Engineering (WISE)</h3>
+                  <h4>Project Instructor</h4>
+                </div>
+                <div className="card-body">
+                  <div className="card-metadata">
+                    <p className="duration">
+                      <strong>09/2023 - 11/2023</strong>
+                    </p>
+                    <p className="location">
+                      <FaMapPin /> Stony Brook, NY, USA
+                    </p>
+                  </div>
+                  <div className="experience-details">
+                    <p className="normal-font" style={normalFontStyle}>Led a team of undergraduates in a machine learning-focused mini-project for course WSE380, mentoring on algorithm application and project execution.</p>
                   </div>
                 </div>
               </div>
@@ -119,19 +145,20 @@ function WorkExperience() {
                   <FaMapPin /> Stony Brook, NY, USA
                 </p>
                 <div className="education-details">
-                  <p className="normal-font">Relevant Coursework: Big Data Analytics, Probability & Statistics, SAS and R Programming, Statistical Learning, Data Visualization, Machine Learning</p>
+                  <p className="normal-font" style={normalFontStyle}><strong>Relevant Courses:</strong> Big Data Analytics, Probability & Statistics, SAS and R Programming, Statistical Learning, Data Visualization, Machine Learning, Natural Language Processing, Deep Learning, Data Mining, Database Systems, Cloud Computing</p>
                 </div>
               </div>
             </div>
             
-            {/* 5. Guest Lecturer Achievement (Right) */}
+            {/* 5. Guest Lecturer Achievement (Right) - Updated with more detail */}
             <div className="journey-marker achievement-marker lecturer">
               <div className="marker-icon">
                 <img src={lecturerLogo} alt="Guest Lecturer" className="icon-image" />
               </div>
               <div className="marker-content achievement-content">
                 <h3>Guest Lecturer</h3>
-                <p className="normal-font">Invited as a guest lecturer to share data science knowledge and industry insights with students at local bootcamps, focusing on real-world applications of machine learning and data visualization techniques.</p>
+                <p className="normal-font" style={normalFontStyle}>Served as a Guest Lecturer at One Week National Level Faculty Development Program (FDP) on "Data Analysis And Artificial Intelligence For Mechanical Engineers" conducted by Nitte Meenakshi Institute of Technology, Bangalore, in June 2021.</p>
+                <p className="normal-font" style={normalFontStyle}>Shared data science knowledge and industry insights, focusing on real-world applications of machine learning and data visualization techniques.</p>
               </div>
             </div>
             
@@ -156,12 +183,10 @@ function WorkExperience() {
                     </p>
                   </div>
                   <div className="experience-details">
-                    <ul>
-                      <li className="normal-font">Created an NLP engine using BERT and AWS Comprehend to extract sentiment from customer support tickets, contributing to a 3-point uplift in Net Promoter Score (NPS).</li>
-                      <li className="normal-font">Designed experimentation frameworks using A/B testing and causal inference to optimize communication strategies, resulting in $250K annual cost savings.</li>
-                      <li className="normal-font">Led EDA and customer segmentation using K-means clustering to identify high-risk and high-value cohorts, helping increase new user conversion rates from 4.3% to 4.5%.</li>
-                      <li className="normal-font">Built real-time service dashboards in Power BI to track KPIs, contributing to a 20% drop in unresolved issues and driving quality improvements.</li>
-                    </ul>
+                    <p className="normal-font" style={normalFontStyle}><strong>Overview:</strong> Myntra is India's leading fashion e-commerce platform and subsidiary of Flipkart (owned by Walmart). The Customer Experience team was responsible for driving improvements across the customer journey, focusing on issue resolution, communication optimization, and customer satisfaction metrics.</p>
+                    <p className="normal-font" style={normalFontStyle}><strong>My Role:</strong> As Data Analyst/Data Scientist on the Customer Experience team, I led analytical projects to understand customer sentiment and improve issue resolution processes. I developed ML models to categorize customer issues, predict satisfaction, and optimize communication strategies.</p>
+                    <p className="normal-font" style={normalFontStyle}><strong>Skills:</strong> Natural language processing (BERT, Transformers), Cloud services (AWS Comprehend, S3, Lambda), Clustering and segmentation (K-means, DBSCAN), Causal inference and A/B testing frameworks, Reporting automation (Power BI, SQL), Python (Pandas, NumPy, Scikit-learn, PyTorch)</p>
+                    <p className="normal-font" style={normalFontStyle}><strong>Impacts:</strong> Built an NLP engine with BERT that improved NPS by 3 points, while implementing A/B testing frameworks that saved $250K annually. Applied K-means clustering techniques that increased conversion rates from 4.3% to 4.5%, and created Power BI dashboards that reduced unresolved customer issues by 20%.</p>
                   </div>
                 </div>
               </div>
@@ -188,10 +213,10 @@ function WorkExperience() {
                     </p>
                   </div>
                   <div className="experience-details">
-                    <ul>
-                      <li className="normal-font">Designed time-series forecasting models and implemented dynamic pricing strategies using XGBoost to improve customer engagement, resulting in a 5% increase in ride retention and higher per-user revenue.</li>
-                      <li className="normal-font">Developed real-time Tableau dashboards for monitoring city-level supply-demand dynamics, enabling the operations team to proactively manage driver availability and reduce idle time by 10% through data-informed incentives.</li>
-                    </ul>
+                    <p className="normal-font" style={normalFontStyle}><strong>Overview:</strong> Rapido is India's largest bike taxi platform providing affordable, convenient short-distance mobility solutions. As the company scaled operations across 100+ cities, the customer retention team focused on maximizing customer lifetime value through data-driven strategies.</p>
+                    <p className="normal-font" style={normalFontStyle}><strong>My Role:</strong> As Associate Data Analyst on the Customer Retention Team, I developed analytical models to identify ride patterns and predict customer churn. I collaborated with product and operations teams to translate insights into actionable strategies for improving rider retention rates.</p>
+                    <p className="normal-font" style={normalFontStyle}><strong>Skills:</strong> Time-series forecasting (ARIMA, Prophet), Predictive modeling (XGBoost, Random Forest), Dashboard development (Tableau, SQL), Python (Pandas, Scikit-learn, Statsmodels), Pricing optimization algorithms, A/B testing and experiment design</p>
+                    <p className="normal-font" style={normalFontStyle}><strong>Impacts:</strong> Developed XGBoost pricing models that increased ride retention by 5% and created Tableau dashboards that reduced driver idle time by 10%. Implemented customer segmentation models improving targeting precision by 15%, while building churn prediction models that achieved 78% accuracy in identifying at-risk users.</p>
                   </div>
                 </div>
               </div>
@@ -224,6 +249,9 @@ function WorkExperience() {
                 <p className="location">
                   <FaMapPin /> Bangalore, KA, IN
                 </p>
+                <div className="education-details">
+                  <p className="normal-font" style={normalFontStyle}><strong>Relevant Courses:</strong> Data Structures and Algorithms, Computer Networks, Operating Systems, Web Development, Programming Languages (Java, C++, Python), Computer Architecture</p>
+                </div>
               </div>
             </div>
           </div>

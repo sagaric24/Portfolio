@@ -659,7 +659,7 @@ body {
 .treasure-map {
   position: relative;
   width: 100%;
-  min-height: 2350px; /* Increased height to avoid overlap */
+  min-height: 3000px; /* Increased height to avoid overlap */
   background-color: #e8d9b5;
   /* background-image: url("../Assets/map-background.png"); */
   border-radius: 15px;
@@ -683,7 +683,8 @@ body {
   pointer-events: none;
 }
 
-/* S-Shaped Map Path - New SVG path */
+/* S-Shaped Map Path - New SVG path with smaller curves */
+/* S-Shaped Map Path - New SVG path with smaller curves */
 .map-path {
   position: absolute;
   top: 50px;
@@ -692,7 +693,7 @@ body {
   height: 3000px; /* Match to content height */
   background: none;
   border: none;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1000 2700"><path d="M500,50 C350,150 650,250 500,350 C350,450 650,550 500,650 C350,750 650,850 500,950 C350,1050 650,1150 500,1250 C350,1350 650,1450 500,1550 C350,1650 650,1750 500,1850 C350,1950 650,2050 500,2150 C350,2250 650,2350 500,2450 C350,2550 650,2650 500,2750" fill="none" stroke="%234a3520" stroke-width="5" stroke-dasharray="15,10" stroke-linecap="round"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1000 2700"><path d="M500,50 C425,150 575,250 500,350 C425,450 575,550 500,650 C425,750 575,850 500,950 C425,1050 575,1150 500,1250 C425,1350 575,1450 500,1550 C425,1650 575,1750 500,1850 C425,1950 575,2050 500,2150 C425,2250 575,2350 500,2450 C425,2550 575,2650 500,2750" fill="none" stroke="%234a3520" stroke-width="5" stroke-dasharray="15,10" stroke-linecap="round"/></svg>');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -723,58 +724,72 @@ body {
 /* Position markers with more spacing - 275px apart - INCREASED SPACING */
 .journey-marker.future {
   top: 70px;
+  right: 35px;
 }
 
 .journey-marker.hackathon {
   top: 450px;
+  left: 30px;
 }
 
 .journey-marker.amazon {
-  top: 300px;
+  top: 250px;
+  right: 30px;
 }
 
 .journey-marker.stony {
-  top: 750px;
+  top: 1100px;
+  left: 30px;
+}
+
+.journey-marker.wise-instructor {
+  top: 810px;
+  left: 30px;
 }
 
 .journey-marker.lecturer {
-  top: 1150px;
+  top: 1450px;
+  left: 25px;
 }
 
 .journey-marker.myntra {
-  top: 950px;
+  top: 1250px;
+  right: 30px;
 }
 
 .journey-marker.rapido {
-  top: 1650px;
+  top: 2000px;
+  right: 30px;
 }
 
 .journey-marker.cert {
   top: 1800px;
+  left: 30px;
 }
 
 .journey-marker.start {
-  top: 2150px;
+  top: 2750px;
+  left: 29px;
 }
 
 /* Left-Right Alternating Positioning */
 /* .journey-marker.future, */
-.journey-marker.amazon,
-.journey-marker.rapido,
+/* .journey-marker.amazon, */
+/* .journey-marker.rapido,
 .journey-marker.myntra {
   right: 10px;
-}
-.journey-marker.future{
+} */
+/* .journey-marker.future{
   right: 35px;
-}
+} */
 
-.journey-marker.hackathon,
-.journey-marker.stony,
+/* .journey-marker.hackathon, */
+/* .journey-marker.stony,
 .journey-marker.lecturer,
 .journey-marker.cert,
 .journey-marker.start {
   left: 10px;
-}
+} */
 
 /* Marker Icon Styles */
 .journey-marker .marker-icon {
@@ -797,7 +812,8 @@ body {
 .journey-marker.stony .marker-icon,
 .journey-marker.lecturer .marker-icon,
 .journey-marker.cert .marker-icon,
-.journey-marker.start .marker-icon {
+.journey-marker.start .marker-icon,
+.journey-marker.wise-instructor .marker-icon {
   right: -30px;
 }
 
